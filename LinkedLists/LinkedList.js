@@ -7,7 +7,7 @@ export class ListNode {
 
 export class LinkedList {
   constructor(head = null) {
-    this.head = head
+    this.head = head;
   }
 
   getSize() {
@@ -29,7 +29,7 @@ export class LinkedList {
   getLast() {
     let node = this.head;
     do {
-      node = node.next
+      node = node.next;
     }
     while (node.next !== null)
 
@@ -46,20 +46,16 @@ export class LinkedList {
     let node = new ListNode(data);
     let tempNode = this.head;
 
-    if (tempNode === null) {
-      this.head = node;
-      return;
-    }
     while (tempNode.next !== null) {
       tempNode = tempNode.next;
     }
 
     tempNode.next = node;
-    this.printLinkedList()
+    this.printLinkedList();
   }
 
   printLinkedList() {
-    let arr = []
+    let arr = [];
     let node = this.head;
 
     while (node) {
@@ -67,12 +63,12 @@ export class LinkedList {
       node = node.next;
     }
 
-    console.log(arr)
+    console.log(arr);
   }
 
   deleteHead() {
     this.head = this.head.next;
-    this.printLinkedList()
+    this.printLinkedList();
 
   }
 
@@ -80,11 +76,11 @@ export class LinkedList {
     let node = this.head;
 
     while(node.next.next !== null){
-      node = node.next
+      node = node.next;
     }
 
     node.next = null;
-    this.printLinkedList()
+    this.printLinkedList();
 
   }
 }

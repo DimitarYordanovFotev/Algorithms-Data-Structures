@@ -12,10 +12,6 @@ export class DoubleLinkedList extends LinkedList{
         let node = new DoubleLinkedListNode(data);
         let tempNode = this.head;
     
-        if (tempNode === null) {
-          this.head = node;
-          return;
-        }
         while (tempNode.next !== null) {
           tempNode = tempNode.next;
         }
@@ -29,8 +25,20 @@ export class DoubleLinkedList extends LinkedList{
       deleteHead() {
         this.head = this.head.next;
         this.head.prev = null;
-        this.printLinkedList()
+        this.printLinkedList();
     
+      }
+
+      printLinkedList() {
+        let arr = [];
+        let node = this.head;
+    
+        while (node) {
+          arr.push(node);
+          node = node.next;
+        }
+    
+        console.log(arr);
       }
     
 }

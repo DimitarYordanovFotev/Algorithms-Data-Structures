@@ -58,6 +58,11 @@ export class LinkedList {
     let arr = [];
     let node = this.head;
 
+    if (node == null) {
+      console.log('List is empty');
+      return;
+    }
+
     while (node) {
       arr.push(node);
       node = node.next;
@@ -72,10 +77,10 @@ export class LinkedList {
 
   }
 
-  deleteTail(){
+  deleteTail() {
     let node = this.head;
 
-    while(node.next.next !== null){
+    while (node.next.next !== null) {
       node = node.next;
     }
 

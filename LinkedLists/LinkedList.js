@@ -47,11 +47,18 @@ export class LinkedList {
     let tempNode = this.head;
 
     while (tempNode.next !== null) {
+      if (tempNode.data === data) {
+        return console.log('Data already exists in linked list');
+      }
       tempNode = tempNode.next;
     }
 
+    if (tempNode.data === data) {
+      return console.log('Data already exists in linked list');
+    }
+
     tempNode.next = node;
-    this.printLinkedList();
+    /*    this.printLinkedList(); */
   }
 
   printLinkedList() {
@@ -88,6 +95,25 @@ export class LinkedList {
     this.printLinkedList();
 
   }
+
+  searchInList(data) {
+    let node = this.head;
+
+    if (node == null) {
+      console.log('List is empty');
+      return;
+    }
+
+    while (node) {
+      if (node.data === data) {
+        return true;
+      }
+      node = node.next;
+    }
+
+    return false;
+  }
+
 }
 
 /* let head = new ListNode(1);

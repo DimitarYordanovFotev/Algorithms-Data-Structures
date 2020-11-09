@@ -1,17 +1,11 @@
-import { SearchAlgorithms } from './SearchAlgorithms/SearchAlgorithms.js'
+import { HashTable } from './HashTable/HashTable.js'
 
-let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-SearchAlgorithms.interpolationSearch(array, -1);
-SearchAlgorithms.interpolationSearch(array, 1);
-SearchAlgorithms.interpolationSearch(array, 2);
-SearchAlgorithms.interpolationSearch(array, 3);
-SearchAlgorithms.interpolationSearch(array, 4);
-SearchAlgorithms.interpolationSearch(array, 5);
-SearchAlgorithms.interpolationSearch(array, 6);
-SearchAlgorithms.interpolationSearch(array, 7);
-SearchAlgorithms.interpolationSearch(array, 8);
-SearchAlgorithms.interpolationSearch(array, 9);
-SearchAlgorithms.interpolationSearch(array, 10);
-SearchAlgorithms.interpolationSearch(array, 11);
-SearchAlgorithms.interpolationSearch(array);
+let hashTable = new HashTable();
+hashTable.insert({ key: 5, value: 'Test 5' });
+hashTable.insert({ key: 10, value: 'Test 10' });
+hashTable.insert({ key: 15, value: 'Test 10' });
+/* hashTable.insert({ key: 15, value: 'Test 15' }); */
+hashTable.insert({ key: 12, value: 'Test 12' });
+console.log(hashTable.search({ key: 10, value: "Test 10" }));
+console.log(hashTable.search({ key: 10, value: "Test 11" }));
+console.log(hashTable.search(10));

@@ -19,7 +19,7 @@ export class CircularLinkedList extends DoubleLinkedList {
         tempNode.next = node;
         this.head.prev = node;
 
-        this.printLinkedList()
+        /*   this.printLinkedList() */
     }
 
     printLinkedList() {
@@ -57,14 +57,14 @@ export class CircularLinkedList extends DoubleLinkedList {
     deleteTail() {
         let node = this.head;
 
-        while (node && 
-               node.next !== this.head &&
-               node.next !== null ) {
+        while (node &&
+            node.next !== this.head &&
+            node.next !== null) {
             node = node.next;
         }
 
-        if (node === this.head){ 
-            this.deleteHead(); 
+        if (node === this.head) {
+            this.deleteHead();
             return;
         }
 
@@ -72,6 +72,26 @@ export class CircularLinkedList extends DoubleLinkedList {
         node.prev.next = this.head;
 
         this.printLinkedList();
+
+    }
+
+    searchInList(data) {
+        let node = this.head;
+
+        if (node == null) {
+            console.log('List is empty');
+            return;
+        }
+
+        while (node) {
+            if (node.data === data) {
+                return true;
+            }
+            if (node.next = this.head) {
+                return false;
+            }
+            node = node.next;
+        }
 
     }
 }

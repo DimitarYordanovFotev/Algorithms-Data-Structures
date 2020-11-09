@@ -1,15 +1,13 @@
-import { Stack } from './Stack/Stack.js'
+import { Queue } from './Queue/Queue.js'
 
-let stack = new Stack();
-stack.push(1);
-stack.push(2);
-stack.push(3);
-stack.peek();
-stack.pop();
-stack.peek();
-stack.pop();
-stack.peek();
-stack.pop();
-stack.peek();
-stack.push(4);
-stack.peek();
+let queue = new Queue();
+queue.push(1);
+queue.push(2);
+queue.push(3);
+queue.peek();
+queue.pop();
+queue.peek();
+queue.pop();
+queue.peek();
+queue.pop();
+queue.peek();

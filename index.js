@@ -1,10 +1,15 @@
-import { CircularLinkedListNode, CircularLinkedList  } from './LinkedLists/CircularLinkedList.js';
+import { Stack } from './Stack/Stack.js'
 
-let head = new CircularLinkedListNode(1)
-let list = new CircularLinkedList(head)
-/* list.insert(2)
-list.insert(3)
-list.insert(4)
-list.insert(5) */
-/* list.deleteHead() */
-list.deleteTail()
+let stack = new Stack();
+stack.push(1);
+stack.push(2);
+stack.push(3);
+stack.peek();
+stack.pop();
+stack.peek();
+stack.pop();
+stack.peek();
+stack.pop();
+stack.peek();
+stack.push(4);
+stack.peek();

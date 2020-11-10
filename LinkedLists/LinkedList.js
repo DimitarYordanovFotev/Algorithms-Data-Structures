@@ -114,6 +114,27 @@ export class LinkedList {
     return false;
   }
 
+  delete(data) {
+    let node = this.head;
+
+    if (node == null) {
+      console.log('List is empty');
+      return;
+    }
+
+    while (node) {
+      if (node.next &&
+        node.next.data === data) {
+        node.next = node.next.next;
+        return;
+      } else if (node.data == data) {
+        this.deleteHead();
+        return;
+      }
+      node = node.next;
+    }
+  }
+
 }
 
 /* let head = new ListNode(1);

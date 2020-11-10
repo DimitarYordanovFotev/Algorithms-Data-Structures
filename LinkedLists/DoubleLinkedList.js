@@ -41,5 +41,23 @@ export class DoubleLinkedList extends LinkedList {
     console.log(arr);
   }
 
+  delete(data) {
+    let node = this.head;
+
+    if (node == null) {
+      console.log('List is empty');
+      return;
+    }
+
+    while (node) {
+      if (node.data === data) {
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+        return;
+      }
+      node = node.next;
+    }
+  }
+
 }
 

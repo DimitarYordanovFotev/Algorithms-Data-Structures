@@ -37,4 +37,20 @@ export class HashTable {
             return tempLinkedList;
         }
     }
+
+    delete(data) {
+        if (typeof (data) === 'object' &&
+            data.key &&
+            data.value) {
+
+            let index = this._hash(data.key);
+            let tempLinkedList = this.hashArray[index];
+
+            tempLinkedList.delete(data.value);
+        } else if (typeof (data) === 'number') {
+            let index = this._hash(data);
+            this.hashArray.splice(index, 1);
+        }
+    }
+
 }

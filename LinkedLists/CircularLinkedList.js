@@ -94,4 +94,25 @@ export class CircularLinkedList extends DoubleLinkedList {
         }
 
     }
+
+    delete(data) {
+        let node = this.head;
+
+        if (node == null) {
+            console.log('List is empty');
+            return;
+        }
+
+        while (node.next) {
+            if (node.data === data) {
+                if (node = this.head) {
+                    this.head = node.prev;
+                }
+                node.prev.next = node.next;
+                node.next.prev = node.prev;
+                return;
+            }
+            node = node.next;
+        }
+    }
 }

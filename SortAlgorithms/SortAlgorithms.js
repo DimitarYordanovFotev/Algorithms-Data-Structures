@@ -69,4 +69,21 @@ export class SortAlgorithms {
 
         }
     }
+
+    static selectionSort(array) {
+        if (array &&
+            Array.isArray(array)) {
+
+            for (let i = 0; i < array.length; i++) {
+                let min = i;
+                for (let j = 0; j < array.length; j++) {
+                    if (array[min] < array[j]) {
+                        SortAlgorithms._swapInArray(array, j, min)
+                    }
+                }
+            }
+
+            console.log(array);
+        }
+    }
 }

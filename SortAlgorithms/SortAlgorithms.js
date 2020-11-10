@@ -86,4 +86,52 @@ export class SortAlgorithms {
             console.log(array);
         }
     }
+
+    static mergeSort(array) {
+        if (array &&
+            Array.isArray(array) &&
+            array.length !== 0) {
+
+            if (array.length === 1) {
+                return array;
+            }
+
+            let tempArray1 = array.slice(0, array.length / 2);
+            let tempArray2 = array.slice((array.length / 2), array.length);
+
+            let array1 = this.mergeSort(tempArray1);
+            let array2 = this.mergeSort(tempArray2);
+
+            return SortAlgorithms._merge(array1, array2);
+
+        }
+    }
+
+    static _merge(array1, array2) {
+        let array3 = [];
+
+        while (array1.length > 0 &&
+            array2.length > 0) {
+
+            if (array1[0] > array2[0]) {
+                array3.push(array2[0]);
+                array2.splice(0, 1);
+            } else {
+                array3.push(array1[0]);
+                array1.splice(0, 1);
+            }
+        }
+
+        while (array1.length > 0) {
+            array3.push(array1[0]);
+            array1.splice(0, 1)
+        }
+
+        while (array2.length > 0) {
+            array3.push(array2[0]);
+            array2.splice(0, 1);
+        }
+
+        return array3;
+    }
 }

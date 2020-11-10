@@ -34,4 +34,39 @@ export class SortAlgorithms {
 
         }
     }
+
+    static insertionSort(array) {
+        if (array &&
+            Array.isArray(array)) {
+            let sortedEndIndex = -1;
+            let swapped = false;
+
+            for (let i = 0; i < array.length; i++) {
+                swapped = false;
+                for (let j = 0; j < array.length; j++) {
+                    if (array[j + 1] &&
+                        array[j] > array[j + 1]) {
+                        SortAlgorithms._swapInArray(array, j, j + 1);
+                        sortedEndIndex++;
+                        swapped = true;
+                        if (sortedEndIndex > 0) {
+                            for (let n = sortedEndIndex; n > 0; n--) {
+                                if (array[n - 1] &&
+                                    array[n] < array[n - 1]) {
+                                    SortAlgorithms._swapInArray(array, n, n - 1);
+                                    swapped = true;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if (!swapped) {
+                    console.log(array);
+                    break;
+                }
+            }
+
+        }
+    }
 }
